@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 app=$1
 total_number=5
