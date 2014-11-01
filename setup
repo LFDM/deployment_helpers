@@ -13,7 +13,7 @@
 # this command will create an arethusa and an arethusa-staging link,
 # which lead to arethusa-prod-1, respectively arethusa-dev-1.
 # These prod and dev links will reference specific build versions, generated
-# by the `deploy.sh`.
+# by the `deploy` script.
 
 source ./common.sh
 
