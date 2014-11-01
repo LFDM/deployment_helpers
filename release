@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Releases the current dev environment into production
 #   release APP
