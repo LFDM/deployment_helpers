@@ -4,7 +4,7 @@
 
 source ./common.sh
 
-total_number=3
+path=${2:-$DEPLOYMENT_HELPER_TARGET}
 
 generate_empty_links () {
   for i in $(seq 1 $total_number); do
