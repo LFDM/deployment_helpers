@@ -2,13 +2,9 @@
 
 # Sets up the basic file structure for our linking system
 
-app=$1
-path=${2:-$DEPLOYMENT_HELPER_TARGET}
+source ./common.sh
 
 total_number=3
-
-link_name () { echo "$app-$1-$2"; }
-link_path () { echo "$path/$(link_name $1 $2)"; }
 
 generate_empty_links () {
   for i in $(seq 1 $total_number); do
