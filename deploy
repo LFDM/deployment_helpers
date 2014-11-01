@@ -40,7 +40,7 @@ cascade_link () {
 set_new_link () {
   link=$(link_path $1 1)
   rm $link
-  ln -s $build $link
+  ln -s $(readlink -f $build) $link
 }
 
 cascade_links $env
