@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Releases the current dev environment into production
+#   release APP
+#
+# APP is the name of your application.
+#
+# Given the example
+#   release arethusa
+#
+# The reference of arethusa-dev-1 will be copied and be released
+# as arethusa-prod-1.
+
+source ./common.sh
+
+staging=$(link_path dev 1)
+master=$(link_path prod 1)
+
+staged_version=$(readlink -f staging)
+
+rm $master
+ln -s $staged_version $master
