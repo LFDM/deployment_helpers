@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Sets up the basic file structure for our linking system
+#   setup APP [DEPLOYMENT_PATH]
+#
+# APP is the name of your application
+# DEPLOYMENT_PATH the path to the directory which will contain the linked
+#   references. Optional, defaults to the env var DEPLOYMENT_HELPER_TARGET
+#
+# Given the example
+#   setup arethusa /var/www/tools
+#
+# this command will create an arethusa and an arethusa-staging link,
+# which lead to arethusa-prod-1, respectively arethusa-dev-1.
+# These prod and dev links will reference specific build versions, generated
+# by the `deploy.sh`.
+
+source ./common.sh
+
+path=${2:-$DEPLOYMENT_HELPER_TARGET}
+
+generate_empty_links () {
+  for i in $(seq 1 $total_number); do
+    touch "$(link_path $1 $i)"
+  done
+}
+
+link_to_link () {
+  ln -s "$(link_path $1 1)" "$path/$2" 
+}
+
+generate_empty_links prod
+generate_empty_links dev
+
+link_to_link prod $app prod
+link_to_link dev "$app-staging"
