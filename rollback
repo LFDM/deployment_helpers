@@ -1,5 +1,16 @@
 #!/bin/bash
 
+# Rolls back a release and updates the link hierarchy.
+#   rollback APP ENVIROMENT [DEPLOYMENT_PATH]
+#
+# Arguments follow the same logic as with the `deploy` script.
+#
+# Given the example
+#   rollback arethusa dev
+#
+# arethusa-dev-1 will become what was arethusa-dev-2, which itself
+# will refers what was arethusa-dev-3 and so on.
+
 source ./common.sh
 
 env=$2
