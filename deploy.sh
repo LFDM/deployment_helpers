@@ -15,7 +15,7 @@ cascade_links () {
 cascade_link () {
   old_link=$(link_path $1 $i)
   new_link=$(link_path $1 $(($i + 1)))
-  old_target=$(readlink $old_link)
+  old_target=$(readlink -f $old_link)
   rm $new_link
   ln -s $old_target $new_link
 }
