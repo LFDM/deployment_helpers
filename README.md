@@ -21,10 +21,10 @@ and another folder called `server`, which contains files that are
 exposed to the internet.
 
 We first export an environmental variable, so that the helper scripts
-now where to work.
+know where to work.
 
 ```
-export DEPLOYMENT_HELPER_TARGET="/server"
+export DEPLOYMENT_HELPER_TARGET="server"
 ```
 
 We launch the `setup` script to build up the initial set of links we
@@ -57,7 +57,7 @@ contain our builds.
 deploy app app/v1 dev
 ```
 will create a link from `app-dev-1` to the `app/v1` folder. Remember
-that the tip of `dev` link hierarchy is also referenced by `app-staging`.
+that the tip of the `dev` link hierarchy is also referenced by `app-staging`.
 
 Let's repeat the process and add a reference to `app/v2`, also in the
 `dev` environment.
@@ -77,7 +77,7 @@ recent production version.
 release app
 ```
 
-The reference of `app-dev-1` will be copied to `app-prod-1`, which is
+The reference in `app-dev-1` will be copied to `app-prod-1`, which is
 also accessible through the pure `app` link.
 
 We can also deploy a new version directly to the production link
