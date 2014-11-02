@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Adds links to versioned builds of your application.
-#   deploy APP PATH_TO_BUILD ENVIRONMENT [DEPLOYMENT_PATH]
+#   depl-help-deploy APP PATH_TO_BUILD ENVIRONMENT [DEPLOYMENT_PATH]
 #
 # APP is the name of your application
 # PATH_TO_BUILD is the path to the versioned build you want to reference
@@ -9,7 +9,7 @@
 # DEPLOYMENT_PATH works the same as in the `setup` script.
 #
 # Given the example
-#   deploy arethusa /usr/local/arethusa/8gh178s prod /var/www/tools/arethusa
+#   depl-help-deploy arethusa /usr/local/arethusa/8gh178s prod /var/www/tools/arethusa
 #
 # A new production link that refers to the directory 8gh178s will be set as
 # arethusa-prod-1.
@@ -17,7 +17,7 @@
 # reference of arethusa-prod-1 will then be found in arethusa-prod-2, which
 # itself will be pushed down to arethusa-prod-3 and so on.
 
-source ./common.sh
+source ./depl-help-common.sh
 
 build=$2
 env=$3

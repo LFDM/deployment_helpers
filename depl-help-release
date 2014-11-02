@@ -1,21 +1,21 @@
 #!/bin/bash
 
 # Releases the current dev environment into production
-#   release APP
+#   depl-help-release APP
 #
 # APP is the name of your application.
 #
 # Given the example
-#   release arethusa
+#   depl-help-release arethusa
 #
 # The reference of arethusa-dev-1 will be copied and be released
 # as arethusa-prod-1.
 
-source ./common.sh
+source ./depl-help-common.sh
 
 path=${2:-$DEPLOYMENT_HELPER_TARGET}
 
 staging=$(link_path dev 1)
 staged_version=$(readlink -f $staging)
 
-./deploy $app $staged_version prod $path
+./depl-help-deploy $app $staged_version prod $path

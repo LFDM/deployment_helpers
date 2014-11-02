@@ -32,7 +32,7 @@ need in future steps. The first argument of the script is the name of
 the application, we go for `app` in this example.
 
 ```
-setup app
+depl-help-setup app
 ```
 
 This will create a couple of files in the `server` folder
@@ -54,7 +54,7 @@ The other files will be used to link to the actual directories that
 contain our builds.
 
 ```
-deploy app app/v1 dev
+depl-help-deploy app app/v1 dev
 ```
 will create a link from `app-dev-1` to the `app/v1` folder. Remember
 that the tip of the `dev` link hierarchy is also referenced by `app-staging`.
@@ -63,7 +63,7 @@ Let's repeat the process and add a reference to `app/v2`, also in the
 `dev` environment.
 
 ```
-deploy app app/v2 dev
+depl-help-deploy app app/v2 dev
 ```
 
 `app-dev-1` now links to `app/v2`. The former reference of `app-dev-1`
@@ -74,7 +74,7 @@ If we are happy with our staged version, we can declare it as our most
 recent production version.
 
 ```
-release app
+depl-help-release app
 ```
 
 The reference in `app-dev-1` will be copied to `app-prod-1`, which is
@@ -84,7 +84,7 @@ We can also deploy a new version directly to the production link
 hierarchy.
 
 ```
-deploy app app/v3 prod
+depl-help-deploy app app/v3 prod
 ```
 
 `app-prod-1` will now link to `app/v3`, `app-prod-2` will contain a
@@ -95,7 +95,7 @@ might access through a route that goes to our `app` link, we can easily
 roll back to an older version.
 
 ```
-rollback app prod
+depl-help-rollback app prod
 ```
 
 This will set back `app-prod-1` to what `app-prod-2` linked to - in our

@@ -1,21 +1,21 @@
 #!/bin/bash
 
 # Sets up the basic file structure for our linking system
-#   setup APP [DEPLOYMENT_PATH]
+#   depl-help-setup APP [DEPLOYMENT_PATH]
 #
 # APP is the name of your application
 # DEPLOYMENT_PATH the path to the directory which will contain the linked
 #   references. Optional, defaults to the env var DEPLOYMENT_HELPER_TARGET
 #
 # Given the example
-#   setup arethusa /var/www/tools
+#   depl-help-setup arethusa /var/www/tools
 #
 # this command will create an arethusa and an arethusa-staging link,
 # which lead to arethusa-prod-1, respectively arethusa-dev-1.
 # These prod and dev links will reference specific build versions, generated
-# by the `deploy` script.
+# by the `depl-help-deploy` script.
 
-source ./common.sh
+source ./depl-help-common.sh
 
 path=${2:-$DEPLOYMENT_HELPER_TARGET}
 
