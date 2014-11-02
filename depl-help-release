@@ -18,4 +18,4 @@ path=${2:-$DEPLOYMENT_HELPER_TARGET}
 staging=$(link_path dev 1)
 staged_version=$(readlink -f $staging)
 
-./depl-help-deploy $app $staged_version prod $path
+$(dirname $(readlink -f $0))/depl-help-deploy $app $staged_version prod $path
