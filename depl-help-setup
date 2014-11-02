@@ -15,7 +15,8 @@
 # These prod and dev links will reference specific build versions, generated
 # by the `depl-help-deploy` script.
 
-source ./depl-help-common.sh
+echo "$(dirname $(readlink -f $0))/depl-help-common.sh"
+source "$(dirname $(readlink -f $0))/depl-help-common.sh"
 
 path=${2:-$DEPLOYMENT_HELPER_TARGET}
 

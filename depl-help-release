@@ -11,7 +11,7 @@
 # The reference of arethusa-dev-1 will be copied and be released
 # as arethusa-prod-1.
 
-source ./depl-help-common.sh
+source "$(dirname $(readlink -f $0))/depl-help-common.sh"
 
 path=${2:-$DEPLOYMENT_HELPER_TARGET}
 
