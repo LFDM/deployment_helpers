@@ -12,3 +12,8 @@ fi
 
 link_name () { echo "$app-$1-$2"; }
 link_path () { echo "$path/$(link_name $1 $2)"; }
+
+create_link () {
+  ln -s $1 $2
+  echo "Linking $2 to $1"
+}

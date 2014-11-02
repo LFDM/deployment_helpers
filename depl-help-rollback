@@ -29,7 +29,7 @@ propagate_link () {
     new_target=$(readlink -f $new_link)
 
     rm $old_link
-    ln -s $new_target $old_link
+    create_link $new_target $old_link
   fi
 }
 

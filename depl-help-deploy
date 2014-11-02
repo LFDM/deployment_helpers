@@ -35,14 +35,14 @@ cascade_link () {
     new_link=$(link_path $1 $(($2 + 1)))
     old_target=$(readlink -f $old_link)
     rm $new_link
-    ln -s $old_target $new_link
+    create_link $old_target $new_link
   fi
 }
 
 set_new_link () {
   link=$(link_path $1 1)
   rm $link
-  ln -s $(readlink -f $build) $link
+  create_link $(readlink -f $build) $link
 }
 
 cascade_links $env

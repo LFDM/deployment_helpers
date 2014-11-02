@@ -26,7 +26,7 @@ generate_empty_links () {
 }
 
 link_to_link () {
-  ln -s "$(link_path $1 1)" "$path/$2" 
+  create_link "$(link_path $1 1)" "$path/$2" 
 }
 
 generate_empty_links prod
